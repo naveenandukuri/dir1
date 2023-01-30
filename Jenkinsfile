@@ -23,6 +23,7 @@ sh '''mvn sonar:sonar \\
 stage("nexus"){
 steps{
 nexusArtifactUploader artifacts: [[artifactId: '$BUILD_TIMESTAMP', classifier: '', file: 'webapp/target/webapp.war', type: 'war']], credentialsId: 'NEXUS-CRED', groupId: 'QAT', nexusUrl: '3.145.44.12:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'test1', version: '$BUILD_ID'
+
 }
 }
 stage("tomcat"){
