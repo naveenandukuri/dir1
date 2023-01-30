@@ -22,12 +22,12 @@ sh '''mvn sonar:sonar \\
 }
 stage("nexus"){
 steps{
-nexusArtifactUploader artifacts: [[artifactId: '$BUILD_TIMESTAMP', classifier: '', file: 'webapp/target/webapp.war', type: 'war']], credentialsId: 'NEXUS-CRED', groupId: 'QA', nexusUrl: '3.144.94.72:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'test', version: '$BUILD_ID'
+nexusArtifactUploader artifacts: [[artifactId: '$BUILD_TIMESTAMP', classifier: '', file: 'webapp/target/webapp.war', type: 'war']], credentialsId: 'NEXUS-CRED', groupId: 'QAT', nexusUrl: '3.145.44.12:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'test1', version: '$BUILD_ID'
 }
 }
 stage("tomcat"){
 steps{
-deploy adapters: [tomcat9(credentialsId: 'TOMCAT-CRED', path: '', url: 'http://18.188.53.16:8080/')], contextPath: 'webapp/target/webapp.war', onFailure: false, war: '**/*.war'
+deploy adapters: [tomcat9(path: '', url: 'http://18.220.117.197:8080/')], contextPath: 'qaenv', onFailure: false, war: '**/*.war'
 }
 }
 
