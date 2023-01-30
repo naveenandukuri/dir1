@@ -16,8 +16,8 @@ stage("sonar"){
 steps{
 sh '''mvn sonar:sonar \\
   -Dsonar.projectKey=mavenproj \\
-  -Dsonar.host.url=http://3.128.78.26:9000 \\
-  -Dsonar.login=1a69a088bede4a7cdef143e7b233bb59fee08ecb'''
+  -Dsonar.host.url=http://18.191.51.1:9000 \\
+  -Dsonar.login=8dcdd34743b22551daca4905329566e8e001679c'''
 }
 }
 stage("nexus"){
