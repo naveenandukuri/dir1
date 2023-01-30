@@ -8,7 +8,7 @@ checkout changelog: false, scm: scmGit(branches: [[name: '*/fet1']], extensions:
 }
 stage("maven"){
 steps{
-h "mvn clean package"
+sh "mvn clean package"
 }
 }
 
