@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+       name: mydeploy
+spec:
+   replicas: 3
+   selector:
+    matchLabels:
+      app: dev
+   template:
+     metadata:
+        labels:
+          app: dev
+        name: mydev
+        namespace: default
+     spec:
+        containers:
+          - image: bhanuprakashece410/transrvc:BUILD_NUMBER
+            imagePullPolicy: Always
+            name: c1
+            ports:
+             - containerPort: 8080
