@@ -30,5 +30,6 @@ steps{
 deploy adapters: [tomcat9(path: '', url: 'http://18.220.117.197:8080/')], contextPath: 'qaenv', onFailure: false, war: '**/*.war'
 }
 }
-
+}
+}
 
