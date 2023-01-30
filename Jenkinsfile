@@ -3,7 +3,7 @@ agent any
 stages(){
 stage("git init"){
 steps{
-checkout changelog: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/naveenandukuri/dir1.git']])
+checkout changelog: false, scm: scmGit(branches: [[name: '*/fet1']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/naveenandukuri/dir1.git']])
 }
 }
 stage("maven"){
